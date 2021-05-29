@@ -6,7 +6,7 @@ https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash
 
 # 使用教程
 
-节点转码：https://bianyuan.xyz/
+节点转码：https://subcon.dlj.tf/
 
 配置转码：https://www.urlencoder.org/
 
