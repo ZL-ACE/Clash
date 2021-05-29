@@ -13,7 +13,7 @@ https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash
 
 订阅地址示例
 
-https://subcon.dlj.tf/sub?target=clash&url=api.dingyue1.com%2F1234567%7Capi.dingyue2.com%2F1234567%7Capi.wangiyihun.com%2Fblabla
+https://subcon.dlj.tf/sub?target=clash&url=api.dingyue1.com%2F1234567%7Capi.dingyue2.com%2F1234567%7Capi.wangiyihun.com%2Fblabla 
 
 预留一下策略组配置文件地址位置，在上面链接的基础上加上下面这串代码  
 
