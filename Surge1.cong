@@ -1,0 +1,64 @@
+[General]
+# > Internet 测试 URL
+internet-test-url = http://cp.cloudflare.com/generate_204
+# > 代理测速 URL
+proxy-test-url = http://cp.cloudflare.com/generate_204
+# > 测试超时（秒）
+test-timeout = 5
+loglevel = notify
+bypass-system = true
+skip-proxy = 127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,100.64.0.0/10,localhost,*.local,e.crashlytics.com,captive.apple.com,::ffff:0:0:0:0/1,::ffff:128:0:0:0/1
+# DNS设置或根据自己网络情况进行相应设置
+bypass-tun = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12
+dns-server = 119.29.29.29,223.5.5.5,114.114.114.114,system
+http-api = zhulei1117*@0.0.0.0:6171
+
+[Proxy Group]
+Select = select, Proxy, 🇨🇳 Star, 🇭🇰 HongKong, 🇯🇵 Japan, 🇨🇳 TaiWan, 🇸🇬 Singapore, 🇺🇲 United States
+
+Proxy = select, policy-path=*, update-interval=86400
+
+Global = select, Select, 🇨🇳 Star, 🇭🇰 HongKong, 🇯🇵 Japan, 🇨🇳 TaiWan, 🇸🇬 Singapore, 🇺🇲 United States
+Apple = select, DIRECT, 🇨🇳 Star, 🇭🇰 HongKong,  🇨🇳 TaiWan, 🇺🇲 United States
+
+iOS Update = select, DIRECT, REJECT
+
+Telegram = select, Select, 🇨🇳 Star, 🇭🇰 HongKong, 🇯🇵 Japan, 🇨🇳 TaiWan, 🇸🇬 Singapore, 🇺🇲 United States
+Twitter = select, Select, 🇨🇳 Star, 🇭🇰 HongKong, 🇯🇵 Japan, 🇨🇳 TaiWan, 🇸🇬 Singapore, 🇺🇲 United States
+Game = select, DIRECT, Select, 🇨🇳 Star, 🇭🇰 HongKong, 🇯🇵 Japan, 🇨🇳 TaiWan, 🇸🇬 Singapore, 🇺🇲 United States
+YouTube = select, Select, 🇨🇳 Star, 🇭🇰 HongKong, 🇯🇵 Japan, 🇨🇳 TaiWan, 🇸🇬 Singapore, 🇺🇲 United States
+Netflix = select, Select, 🇨🇳 Star, 🇭🇰 HongKong, 🇯🇵 Japan, 🇨🇳 TaiWan, 🇸🇬 Singapore, 🇺🇲 United States
+Microsoft = select, DIRECT, Select, 🇨🇳 Star, 🇭🇰 HongKong, 🇯🇵 Japan, 🇨🇳 TaiWan, 🇸🇬 Singapore, 🇺🇲 United States
+FINAL = select, DIRECT, Select, 🇨🇳 Star, 🇭🇰 HongKong, 🇯🇵 Japan, 🇨🇳 TaiWan, 🇸🇬 Singapore, 🇺🇲 United States
+
+
+🇨🇳 Star = url-test, policy-path=*, update-interval=86400, policy-regex-filter=(台湾 VIP02|新加坡 VIP02|香港 VIP02| 2x 青岛), url=http://www.gstatic.com/generate_204, timeout=0, interval=1200, tolerance=50
+🇭🇰 HongKong = url-test, policy-path=*, update-interval=86400, policy-regex-filter=(港|HK|Hong Kong), url=http://www.gstatic.com/generate_204, timeout=0, interval=1200, tolerance=50
+🇯🇵 Japan = url-test, policy-path=*, update-interval=86400, policy-regex-filter=(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan), url=http://www.gstatic.com/generate_204, timeout=0, interval=1200, tolerance=50
+🇺🇲 United States = url-test, policy-path=*, update-interval=86400, policy-regex-filter=(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States), url=http://www.gstatic.com/generate_204, timeout=0, interval=1200, tolerance=50
+🇨🇳 TaiWan = url-test, policy-path=*, update-interval=86400, policy-regex-filter=(台|新北|彰化|TW|Taiwan), url=http://www.gstatic.com/generate_204, timeout=0, interval=1200, tolerance=50
+🇸🇬 Singapore = url-test, policy-path=*, update-interval=86400, policy-regex-filter=(新加坡|坡|狮城|SG|Singapore), url=http://www.gstatic.com/generate_204, timeout=0, interval=1200, tolerance=50
+
+[Rule]
+RULE-SET, https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list, DIRECT
+RULE-SET, https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Unbreak.list, DIRECT
+RULE-SET, https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Advertising.list, REJECT
+RULE-SET, https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Hijacking.list, REJECT
+RULE-SET, https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Privacy.list, REJECT
+RULE-SET, https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Apple/Apple.list, Apple
+RULE-SET, https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Apple/BlockiOSUpdate.list, iOS Update
+RULE-SET, https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/China.list, DIRECT
+RULE-SET, https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/ChinaIP.list, DIRECT
+RULE-SET, https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/Video/YouTube.list, YouTube
+RULE-SET, https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/Video/Netflix.list, Netflix
+RULE-SET, https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Telegram/Telegram.list, Telegram
+RULE-SET, https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Twitter.list, Twitter
+RULE-SET, https://raw.githubusercontent.com/lhie1/Rules/master/Surge/Surge%203/Provider/Microsoft.list, Microsoft
+RULE-SET, https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Game/Xbox.list, Game
+RULE-SET, https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Game/Steam.list, Game
+RULE-SET, https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Game/Nintendo.list, Game
+RULE-SET, https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Epic.list, Game
+RULE-SET, https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Sony.list, Game
+RULE-SET, https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list, Global
+GEOIP, CN , DIRECT
+FINAL, FINAL
