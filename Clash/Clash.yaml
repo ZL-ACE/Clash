@@ -125,7 +125,7 @@ proxy-providers:
     type: http
     path: ./Proxy/Star.yaml
     url: "https://subcon.dlj.tf/sub?target=clash&new_name=true&url=订阅链接1|订阅链接2&include=台湾 VIP02|香港|新加坡 VIP02|新加坡 Magic|日本 Magic
-    &emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false"
+          &emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false"
     interval: 86400
     health-check:
       enable: true
@@ -136,7 +136,7 @@ proxy-providers:
     type: http
     path: ./Proxy/HK.yaml
     url: "https://subcon.dlj.tf/sub?target=clash&new_name=true&url=订阅链接1|订阅链接2&include=香港
-    &emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false"
+          &emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false"
     interval: 86400
     health-check:
       enable: true
@@ -147,7 +147,7 @@ proxy-providers:
     type: http
     path: ./Proxy/TW.yaml
     url: "https://subcon.dlj.tf/sub?target=clash&new_name=true&url=订阅链接1|订阅链接2&include=台湾
-    &emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false"
+          &emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false"
     interval: 86400
     health-check:
       enable: true
@@ -158,7 +158,7 @@ proxy-providers:
     type: http
     path: ./Proxy/SG.yaml
     url: "https://subcon.dlj.tf/sub?target=clash&new_name=true&url=订阅链接1|订阅链接2&include=新加坡
-    &emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false"
+          &emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false"
     interval: 86400
     health-check:
       enable: true
@@ -169,7 +169,7 @@ proxy-providers:
     type: http
     path: ./Proxy/JP.yaml
     url: "https://subcon.dlj.tf/sub?target=clash&new_name=true&url=订阅链接1|订阅链接2&include=日本
-    &emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false"
+          &emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false"
     interval: 86400
     health-check:
       enable: true
@@ -180,7 +180,7 @@ proxy-providers:
     type: http
     path: ./Proxy/USA.yaml
     url: "https://subcon.dlj.tf/sub?target=clash&new_name=true&url=订阅链接1|订阅链接2&include=美国
-    &emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false"
+          &emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false"
     interval: 86400
     health-check:
       enable: true
