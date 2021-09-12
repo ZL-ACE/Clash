@@ -12,3 +12,6 @@ https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash
 
 CDN地址：https://raw.githubusercontents.com/ZL-ACE/For-me/main/RuleSet/Emby.yaml
 
+# 常用文件
+https://raw.githubusercontents.com/ZL-ACE/For-me/main/Clash/Clash.yaml
+
