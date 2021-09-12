@@ -9,5 +9,6 @@ https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash
 
 # Github仓库cdn地址
 原地址：https://raw.githubusercontent.com/ZL-ACE/For-me/main/RuleSet/Emby.yaml
+
 CDN地址：https://raw.githubusercontents.com/ZL-ACE/For-me/main/RuleSet/Emby.yaml
 
