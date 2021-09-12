@@ -1,1 +1,326 @@
+mixed-port: 7890
+redir-port: 7892
+allow-lan: true
+mode: Rule
+log-level: info
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:1053
+  enhanced-mode: redir-host
+  nameserver:
+    - 114.114.114.114
+    - 223.5.5.5
+    - 119.28.28.28
+    - 119.29.29.29
+  fallback:
+    - https://doh.pub/dns-query
+    - tls://xingnian.d.rubyfish.cn:853
+    - tls://dns.alidns.com:853
+    - tls://gz.zhezhiyu.xyz:853
 
+rule-providers:
+   LAN:
+      type: http
+      behavior: classical
+      url: "https://raw.githubusercontents.com/blackmatrix7/ios_rule_script/release/rule/Clash/Lan/Lan.yaml"
+      path: ./Rule/Lan.yaml
+      interval: 86400
+
+   Advertising:
+      type: http
+      behavior: classical
+      url: "https://raw.githubusercontents.com/blackmatrix7/ios_rule_script/release/rule/Clash/AdvertisingLite/AdvertisingLite_Classical.yaml"
+      path: ./Rule/Advertising.yaml
+      interval: 86400
+
+   Apple:
+      type: http
+      behavior: classical
+      url: "https://raw.githubusercontents.com/blackmatrix7/ios_rule_script/release/rule/Clash/Apple/Apple.yaml"
+      path: ./Rule/Apple.yaml
+      interval: 86400
+
+   Telegram:
+      type: http
+      behavior: classical
+      url: "https://raw.githubusercontents.com/blackmatrix7/ios_rule_script/release/rule/Clash/Telegram/Telegram.yaml"
+      path: ./Rule/Telegram.yaml
+      interval: 86400
+
+   Game:
+      type: http
+      behavior: classical
+      url: "https://raw.githubusercontents.com/blackmatrix7/ios_rule_script/release/rule/Clash/Game/Game.yaml"
+      path: ./Rule/Steam.yaml
+      interval: 86400
+
+   YouTube:
+      type: http
+      behavior: classical
+      url: "https://raw.githubusercontents.com/blackmatrix7/ios_rule_script/release/rule/Clash/YouTube/YouTube.yaml"
+      path: ./Rule/YouTube.yaml
+      interval: 86400
+
+   Netflix:
+      type: http
+      behavior: classical
+      url: "https://raw.githubusercontents.com/blackmatrix7/ios_rule_script/release/rule/Clash/Netflix/Netflix.yaml"
+      path: ./Rule/Netflix.yaml
+      interval: 86400
+
+   Microsoft:
+      type: http
+      behavior: classical
+      url: "https://raw.githubusercontents.com/blackmatrix7/ios_rule_script/release/rule/Clash/Microsoft/Microsoft.yaml"
+      path: ./Rule/Epic.yaml
+      interval: 86400
+
+   Emby:
+      type: http
+      behavior: classical
+      url: "https://raw.githubusercontents.com/ZL-ACE/For-me/main/RuleSet/Emby.yaml"
+      path: ./Rule/Emby.yaml
+      interval: 86400
+
+   ProxyGFWlist:
+      type: http
+      behavior: classical
+      url: "https://raw.githubusercontents.com/blackmatrix7/ios_rule_script/release/rule/Clash/Global/Global_Classical.yaml"
+      path: ./Rule/ProxyGFWlist.yaml
+      interval: 86400
+
+   China:
+      type: http
+      behavior: classical
+      url: "https://raw.githubusercontents.com/blackmatrix7/ios_rule_script/release/rule/Clash/China/China.yaml"
+      path: ./Rule/China.yaml
+      interval: 8640
+
+    
+proxy-providers:
+  Shandian:
+    type: http
+    path: ./Proxy/Shandian.yaml
+    url: "https://subcon.dlj.tf/sub?target=clash&new_name=true&url=订阅链接1|订阅链接2
+          &emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false"
+    interval: 86400
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 600
+
+  Big:
+    type: http
+    path: ./Proxy/Big.yaml
+    url: "https://subcon.dlj.tf/sub?target=clash&new_name=true&url=订阅链接1|订阅链接2
+          &emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false"
+    interval: 86400
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 600
+
+  Star:
+    type: http
+    path: ./Proxy/Star.yaml
+    url: "https://subcon.dlj.tf/sub?target=clash&new_name=true&url=订阅链接1|订阅链接2&include=台湾 VIP02|香港|新加坡 VIP02|新加坡 Magic|日本 Magic
+    &emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false"
+    interval: 86400
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 600
+
+  HK:
+    type: http
+    path: ./Proxy/HK.yaml
+    url: "https://subcon.dlj.tf/sub?target=clash&new_name=true&url=订阅链接1|订阅链接2&include=香港
+    &emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false"
+    interval: 86400
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 600
+
+  TW:
+    type: http
+    path: ./Proxy/TW.yaml
+    url: "https://subcon.dlj.tf/sub?target=clash&new_name=true&url=订阅链接1|订阅链接2&include=台湾
+    &emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false"
+    interval: 86400
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 600
+
+  SG:
+    type: http
+    path: ./Proxy/SG.yaml
+    url: "https://subcon.dlj.tf/sub?target=clash&new_name=true&url=订阅链接1|订阅链接2&include=新加坡
+    &emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false"
+    interval: 86400
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 600
+
+  JP:
+    type: http
+    path: ./Proxy/JP.yaml
+    url: "https://subcon.dlj.tf/sub?target=clash&new_name=true&url=订阅链接1|订阅链接2&include=日本
+    &emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false"
+    interval: 86400
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 600
+
+  USA:
+    type: http
+    path: ./Proxy/USA.yaml
+    url: "https://subcon.dlj.tf/sub?target=clash&new_name=true&url=订阅链接1|订阅链接2&include=美国
+    &emoji=true&list=true&udp=false&tfo=false&scv=false&fdn=false&sort=false"
+    interval: 86400
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 600
+ 
+proxy-groups:
+ #策略组
+  - name: Select
+    type: select
+    proxies:
+      - 闪电
+      - BIG
+      - Star
+      - HongKong
+      - TaiWan
+      - Singapore
+      - Japan
+      - United States
+
+  - name: Global
+    type: select
+    proxies:
+      - Select
+      - 闪电
+      - BIG
+
+  - name: Apple
+    type: select
+    proxies:
+      - DIRECT
+      - Select
+
+  - name: Telegram
+    type: select
+    proxies:
+      - Select
+      - Star
+
+  - name: Game
+    type: select
+    proxies:
+      - Select
+      - Star
+      - DIRECT
+
+  - name: YouTube
+    type: select
+    proxies:
+      - Select
+      - Star
+      - HongKong
+      - TaiWan
+      - Singapore
+      - Japan
+      - United States
+
+  - name: Netflix
+    type: select
+    proxies:
+      - Select
+      - Star
+      - HongKong
+      - TaiWan
+      - Singapore
+      - Japan
+      - United States
+
+  - name: Microsoft
+    type: select
+    proxies:
+      - DIRECT
+      - Select
+
+  - name: Emby
+    type: select
+    proxies:
+      - DIRECT
+      - Select
+      - Star
+      - BIG
+     
+  - name: Final
+    type: select
+    proxies:
+      - DIRECT
+      - Select
+
+ #节点组
+  - name: 闪电
+    type: select
+    use:
+      - Shandian
+
+  - name: BIG
+    type: url-test
+    use:
+      - Big
+
+  - name: Star
+    type: url-test
+    use:
+      - Star
+
+  - name: HongKong
+    type: url-test
+    use:
+      - HK
+
+  - name: TaiWan
+    type: url-test
+    use:
+      - TW
+
+  - name: Singapore
+    type: url-test
+    use:
+      - SG
+
+  - name: Japan
+    type: url-test
+    use:
+      - JP
+
+  - name: United States
+    type: url-test
+    use:
+      - USA
+
+rules:
+  - RULE-SET,LAN,DIRECT
+  - RULE-SET,Advertising,REJECT
+  - RULE-SET,Apple,Apple
+  - RULE-SET,Telegram,Telegram
+  - RULE-SET,Game,Game
+  - RULE-SET,YouTube,YouTube
+  - RULE-SET,Netflix,Netflix
+  - RULE-SET,Microsoft,Microsoft
+  - RULE-SET,Emby,Emby
+  - RULE-SET,ProxyGFWlist,Global
+  - RULE-SET,China,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,Final
